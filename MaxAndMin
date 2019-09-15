@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class MaxAndMin {
+
+    public static void main(String[] args) {
+    	Scanner in = new Scanner(System.in);
+    	System.out.println("Enter 5 numbers you want:");
+    	int n1 = in.nextInt();
+    	int n2 = in.nextInt();
+    	int n3 = in.nextInt();
+    	int n4 = in.nextInt();
+    	int n5 = in.nextInt();
+    	
+    	int max = maxOf3(maxOf3(n1,n2,n3),n4,n5);
+    	int min = minOf3(minOf3(n1,n2,n3),n4,n5);
+    	System.out.println("Smallest number is: " + min);
+    	System.out.println("Largest number is: " + max);
+    }
+
+    public static int maxOf3(int r, int s, int t) {
+    	int max =  Math.max(Math.max(r,s),t);
+    	return max;
+    }
+    
+    public static int minOf3(int r, int s, int t) {
+    	int min =  Math.min(Math.min(r,s),t);
+    	return min;
+    }
+    	
+}
+
