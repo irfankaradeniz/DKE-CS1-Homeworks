@@ -1,0 +1,105 @@
+import java.util.Scanner;
+import java.util.Random; 
+
+
+public class Rock 
+{ 
+public static void main(String[] args) 
+{ 
+    String personPlay;
+    String computerPlay = ""; 
+    int computerInt; 
+
+    Scanner scan = new Scanner(System.in); 
+    Random generator = new Random(); 
+    System.out.println("Welcome to the game\n" + 
+    					"*****Rock, Paper, Scissor, Lizard and Spock*****\n" + 
+                        "Please enter a move:\n" + "Rock = r\nPaper = p\n" + 
+                        "Scissors = s\nLizard = l\nSpock = o\n" +
+                        "Please write in small letters");
+
+    System.out.println();
+    computerInt = generator.nextInt(3)+1; 
+
+    if (computerInt == 1) 
+       computerPlay = "r"; 
+    else if (computerInt == 2) 
+       computerPlay = "p"; 
+    else if (computerInt == 3) 
+       computerPlay = "s"; 
+    else if (computerInt == 4)
+    	computerPlay = "l";
+    else if (computerInt == 5)
+    	computerPlay = "o";
+
+    System.out.println("Enter your play: "); 
+    personPlay = scan.nextLine();
+    personPlay = personPlay.toLowerCase();
+    System.out.println("Computer play is: " + computerPlay); 
+    
+    if (personPlay.equals(computerPlay))
+    	System.out.println("It's a tie");
+    else 
+		switch (personPlay) {
+		case "p":
+			if (computerPlay.equals("r"))
+				System.out.println("Paper cover rocks, you win!");
+			else if (computerPlay.equals("s"))
+				System.out.println("Scissors cut paper, you lost!");
+			else if (computerPlay.equals("l"))
+				System.out.println("Lizard eats paper, you lost!");
+			else if (computerPlay.equals("o"))
+				System.out.println("Paper disproves Spock, you win!");
+			break;
+		case "r":
+			if (computerPlay.equals("p"))
+				System.out.println("Paper cover rocks, you lost!");
+			else if (computerPlay.equals("s"))
+				System.out.println("Rock crushes Scissors, you win!");
+			else if (computerPlay.equals("l"))
+				System.out.println("Rock crushes Lizard, you win!");
+			else if (computerPlay.equals("o"))
+				System.out.println("Spock vaporizes rock, you lost!");
+			break;
+		case "s":
+			if (computerPlay.equals("r"))
+				System.out.println("Rock crushes Scissors, you lost!");
+			else if (computerPlay.equals("p"))
+				System.out.println("Scissors cut paper, you win!");
+			else if (computerPlay.equals("l"))
+				System.out.println("Scissors decapitate Lizard, you win!");
+			else if (computerPlay.equals("o"))
+				System.out.println("Spock smashes scissors, you lost!");
+			break;
+		case "l":
+			if (computerPlay.equals("r"))
+				System.out.println("Rock crushes Lizard, you lost!");
+			else if (computerPlay.equals("s"))
+				System.out.println("Scissors decapitate Lizard, you lost!");
+			else if (computerPlay.equals("p"))
+				System.out.println("Lizard eats paper, you win!");
+			else if (computerPlay.equals("o"))
+				System.out.println("Lizard poisons spock, you win!");
+			break;
+		case "o":
+			if (computerPlay.equals("r"))
+				System.out.println("Spock vaporizes rock, you win!");
+			else if (computerPlay.equals("s"))
+				System.out.println("Spock smashes scissors, you win!");
+			else if (computerPlay.equals("l"))
+				System.out.println("Lizard poisons spock, you lost!");
+			else if (computerPlay.equals("p"))
+				System.out.println("Paper disproves Spock, you lost!");
+			break;
+		default:
+			System.out.println("Please enter a valid letter!");
+			
+		
+};
+};
+}
+
+
+    
+    
+   
